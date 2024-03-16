@@ -1,14 +1,18 @@
 import { getAuthSession } from '@/lib/auth'
 import { db } from '@/lib/db'
-import { redis } from '@/lib/redis'
 import { PostVoteValidator } from '@/lib/validators/vote'
 import { CachedPost } from '@/types/redis'
 import { z } from 'zod'
-
+import { Redis } from '@upstash/redis'
 const CACHE_AFTER_UPVOTES = 1
 
 export async function PATCH(req: Request) {
   try {
+    const redis = new Redis({
+  url: 'https://tender-macaw-34639.upstash.io',
+  token: 'AYdPACQgMzExYzEwYmEtYzFjOS00NzhkLTkyOGQtMjgzNzg1YjFlOTg3OWQzZjNlNTJlNjBjNGQzM2EwZjVkMjY3MzU4MTk3OWU=',
+})
+  
     const body = await req.json()
 
     const { postId, voteType } = PostVoteValidator.parse(body)
