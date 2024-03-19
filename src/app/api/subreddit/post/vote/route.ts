@@ -4,14 +4,11 @@ import { PostVoteValidator } from '@/lib/validators/vote'
 import { CachedPost } from '@/types/redis'
 import { z } from 'zod'
 import { Redis } from '@upstash/redis'
+import {redis} from "@/lib/redis"
 const CACHE_AFTER_UPVOTES = 1
 
 export async function PATCH(req: Request) {
   try {
-    const redis = new Redis({
-  url: 'https://tender-macaw-34639.upstash.io',
-  token: 'AYdPACQgMzExYzEwYmEtYzFjOS00NzhkLTkyOGQtMjgzNzg1YjFlOTg3OWQzZjNlNTJlNjBjNGQzM2EwZjVkMjY3MzU4MTk3OWU=',
-})
   
     const body = await req.json()
 
