@@ -14,7 +14,8 @@ interface MiniCreatePostProps {
 
 const MiniCreatePost: FC<MiniCreatePostProps> = ({ session }) => {
   const router = useRouter()
-  const pathname = usePathname()
+  const pathname = usePathname();
+  console.log("pathname");
 
   return (
     <li className='overflow-hidden rounded-md bg-white shadow'>
