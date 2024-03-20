@@ -22,7 +22,7 @@ const Layout = async ({
   params: { slug: string }
 }) => {
   const session = await getAuthSession()
-
+   console.log(slug,"SLUG");
   const subreddit = await db.subreddit.findFirst({
     where: { name: slug },
     include: {
