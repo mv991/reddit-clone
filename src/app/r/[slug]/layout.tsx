@@ -51,7 +51,7 @@ const Layout = async ({
   const isSubscribed = !!subscription
 
   if (!subreddit) return notFound()
-
+   console.log(slug);
   const memberCount = await db.subscription.count({
     where: {
       subreddit: {
