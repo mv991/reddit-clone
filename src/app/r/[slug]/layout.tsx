@@ -106,7 +106,7 @@ const Layout = async ({
                   variant: "outline",
                   className: "w-full mb-6",
                 })}
-                href={`${process.env.URL}/${slug}/submit`}
+                href={`${process.env.URL}/r/${slug}/submit`}
               >
                 Create Post
               </Link>
