@@ -59,7 +59,7 @@ const Layout = async ({
       },
     },
   });
-  console.log("RAN", slug);
+
   return (
     <div className="sm:container max-w-7xl mx-auto h-full pt-12">
       <div>

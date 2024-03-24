@@ -15,7 +15,7 @@ const page = async ({ params }: pageProps) => {
       name: params.slug,
     },
   });
-  console.log("ran");
+
   if (!subreddit) return notFound();
 
   return (

@@ -17,9 +17,6 @@ interface SubRedditPostPageProps {
   };
 }
 
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
-
 const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
   const cachedPost = (await redis.hgetall(
     `post:${params.postId}`
@@ -38,7 +35,6 @@ const SubRedditPostPage = async ({ params }: SubRedditPostPageProps) => {
       },
     });
   }
-  console.log(params, "params");
 
   if (!post && !cachedPost) return notFound();
 
